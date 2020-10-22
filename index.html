@@ -4,15 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mr.Mäxchen</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <title>Mr. Mäxchen</title>
   </head>
+
   <body>
-    <div>
+    <div class="container" id="title-container">
       <h1>Mr. Mäxchen</h1>
       <h2>Lie or die.</h2>
-      <i>Only joking: The game is about having fun with friends and take some drinks:)</i>
+      <i
+        >Only joking: The game is about having fun with friends and take some
+        drinks:)</i
+      >
+    </div>
+    <div class="container">
+      <button id="buttonNewTurn">Würfeln</button>
+      <button id="buttonPreLie">Lügen</button>
+      <form id="form">
+      <input id="number" type="number" min="1" name="number">
+      <button>Submit</button>
+      <script src="./script.js"></script>
+</form>
     </div>
   </body>
 </html>
