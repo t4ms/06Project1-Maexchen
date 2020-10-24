@@ -1,6 +1,3 @@
-import "./style.css";
-import "./dicestyle.css";
-
 const numberArray = [
   "31",
   "32",
