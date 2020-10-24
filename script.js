@@ -1,3 +1,6 @@
+import "./style.css";
+import "./dicestyle.css";
+
 const numberArray = [
   "31",
   "32",
@@ -29,13 +32,32 @@ class Game {
     this.currRandomNum = 0;
   }
   rollDice() {
-    this.diceNum1 = 1 + Math.floor(6 * Math.random());
-    this.diceNum2 = 1 + Math.floor(6 * Math.random());
+    const dice = [...document.querySelectorAll(".die-list")];
+    this.diceNum = "";
+    dice.forEach(die => {
+      this.toggleClasses(die);
+      this.diceNum = this.getRandomNumber(1, 6);
+      die.dataset.roll = this.diceNum;
+    });
+    this.diceNum1 = document.getElementById("die-1").dataset.roll;
+    this.diceNum2 = document.getElementById("die-2").dataset.roll;
+
     if (this.diceNum1 < this.diceNum2) {
       return (this.currRandomNum = `${this.diceNum2}` + this.diceNum1);
     } else {
       return (this.currRandomNum = `${this.diceNum1}` + this.diceNum2);
     }
+  }
+
+  toggleClasses(die) {
+    die.classList.toggle("odd-roll");
+    die.classList.toggle("even-roll");
+  }
+
+  getRandomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   submitNumber() {
@@ -71,7 +93,9 @@ document.getElementById("buttonNewTurn").addEventListener("click", () => {
   gameStart.newTurn();
   gameStart.rollDice();
   if (gameStart.currRandomNum === "21") {
-    alert("MÄXCHEN - everyone except of you take a drink!!!");
+    setTimeout(function() {
+      alert("MÄXCHEN - everyone except of you take a drink!!!");
+    }, 1600);
   }
   console.log(`Random Number after dicing:${gameStart.currRandomNum}`);
   console.log(`Previous submit Number in safe:${gameStart.prevTurnAnswer}`);
@@ -89,3 +113,16 @@ form.onsubmit = e => {
 document.getElementById("buttonPreLie").addEventListener("click", () => {
   gameStart.previousLies();
 });
+
+// Dice-Rolling-Function
+let randomNr = [];
+
+function rollDice() {
+  const dice = [...document.querySelectorAll(".die-list")];
+  dice.forEach(die => {
+    toggleClasses(die);
+    var numberRa = getRandomNumber(1, 6);
+    die.dataset.roll = numberRa;
+    console.log(numberRa);
+  });
+}

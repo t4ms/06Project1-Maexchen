@@ -7,6 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 	<link rel="stylesheet" href="./style.css" />
+	<link rel="stylesheet" href="./dicestyle.css" />
+
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
@@ -16,7 +18,81 @@
 <body>
 	<section class="gamebox beercoaster">
 		<div class="container">
+      	<div class="dice">
+						<ol class="die-list even-roll" data-roll="1" id="die-1">
+							<li class="die-item" data-side="1">
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="2">
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="3">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="4">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="5">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="6">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+						</ol>
+						<ol class="die-list odd-roll" data-roll="1" id="die-2">
+							<li class="die-item" data-side="1">
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="2">
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="3">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="4">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="5">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+							<li class="die-item" data-side="6">
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+								<span class="dot"></span>
+							</li>
+						</ol>
+					</div>
+      <div class="">
 			<h3 id="beercoasterNumber">00<h3>
+      </div>
 		</div>
 	</section>
 	<section class="gamebox">
@@ -25,12 +101,13 @@
 			<button id="buttonPreLie">Previous LIES</button>
 
 			<div class="line">OR</div>
-			<button id="buttonNewTurn">Role Dice</button>
+			<button id="buttonNewTurn">Roll Dice</button>
 			<div class="line">AND</div>
 			<form id="form">
 				<input id="number" type="number" min="1" name="number">
 				<button>SET NUMBER</button>
 				<script src="./script.js"></script>
+				<script src="./dicescript.js"></script>
 			</form>
 		</div>
 	</section>
