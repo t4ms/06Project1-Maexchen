@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="./style.css" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="./style.css" />
 
-    <title>Mr. Mäxchen</title>
-  </head>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-  <body>
-    <div class="container" id="title-container">
-      <h1>Mr. Mäxchen</h1>
-      <h2>Lie or die.</h2>
-      <i
-        >Only joking: The game is about having fun with friends and take some
-        drinks:)</i
-      >
-    </div>
-    <div class="container">
-      <button id="buttonNewTurn">Würfeln</button>
-      <button id="buttonPreLie">Lügen</button>
-      <form id="form">
-      <input id="number" type="number" min="1" name="number">
-      <button>Submit</button>
-      <script src="./script.js"></script>
-</form>
-    </div>
-  </body>
+	<title>Mr. Mäxchen</title>
+</head>
+
+<body>
+	<section class="gamebox beercoaster">
+		<div class="container">
+			<h3 id="beercoasterNumber">00<h3>
+		</div>
+	</section>
+	<section class="gamebox">
+		</div>
+		<div class="container">
+			<button id="buttonPreLie">Previous LIES</button>
+
+			<div class="line">OR</div>
+			<button id="buttonNewTurn">Role Dice</button>
+			<div class="line">AND</div>
+			<form id="form">
+				<input id="number" type="number" min="1" name="number">
+				<button>SET NUMBER</button>
+				<script src="./script.js"></script>
+			</form>
+		</div>
+	</section>
+</body>
+
 </html>

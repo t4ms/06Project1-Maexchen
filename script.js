@@ -65,24 +65,27 @@ class Game {
 }
 
 //DOM
-let gameMaier = new Game();
+let gameStart = new Game();
 
 document.getElementById("buttonNewTurn").addEventListener("click", () => {
-  gameMaier.newTurn();
-  gameMaier.rollDice();
-  if (gameMaier.currRandomNum === "21") {
+  gameStart.newTurn();
+  gameStart.rollDice();
+  if (gameStart.currRandomNum === "21") {
     alert("MÄXCHEN - everyone except of you take a drink!!!");
   }
-  console.log(`Random Number after dicing:${gameMaier.currRandomNum}`);
-  console.log(`Previous submit Number in safe:${gameMaier.prevTurnAnswer}`);
+  console.log(`Random Number after dicing:${gameStart.currRandomNum}`);
+  console.log(`Previous submit Number in safe:${gameStart.prevTurnAnswer}`);
 });
 
 form.onsubmit = e => {
-  gameMaier.submitNumber();
-  console.log(`Current Submit Answer${gameMaier.currTurnAnswer}`);
+  gameStart.submitNumber();
+  console.log(`Current Submit Answer ${gameStart.currTurnAnswer}`);
+  document.getElementById("beercoasterNumber").innerHTML = `${
+    gameStart.currTurnAnswer
+  }`;
   e.preventDefault();
 };
 
 document.getElementById("buttonPreLie").addEventListener("click", () => {
-  gameMaier.previousLies();
+  gameStart.previousLies();
 });

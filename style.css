@@ -1,5 +1,130 @@
-* {
-    color:white;
-    text-align: center;
-    background-color: grey;
+/*import "./style.css" -> put in index.js*/
+
+/*
+Color-Setting
+Rosa#1    #FCE8D9
+Rosa#2    #F7D3C0
+Orange#1  #FBCC9A
+Orange#2  #FAC483
+Blue#1    #A9BBD5
+Blue#2    #A0B9D7
+Green#1   #D2CB6B
+Green#2   #BFB854
+Black     black
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Vidaloka&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Vidaloka", serif;
+  font-size: 12px;
+  background-image: url("https://raw.githubusercontent.com/t4ms/06Project1-Maexchen/gh-pages/woodtableback.jpg");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gamebox {
+  width: 300px;
+  height: 300px;
+  margin-top: 10%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.beercoaster {
+  background-image: url("https://raw.githubusercontent.com/t4ms/06Project1-Maexchen/gh-pages/beerCoaster.png");
+  background-repeat: no-repeat;
+  background-size: 300px 300px;
+  background-position: center;
+  position: relative;
+}
+#beercoasterNumber {
+  margin: 30% auto;
+  position: relative;
+  transform: rotate(-10deg);
+  font-size: 9em;
+  color: rgba(20, 20, 20, 0.95);
+}
+
+button:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+button {
+  appearance: button;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  width: 300px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  background-color: none;
+  box-sizing: border-box;
+  margin: 0.2em;
+  font: 2em Vidaloka;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+input {
+  width: 80px;
+  height: 80px;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: center;
+  appearance: textfield;
+  background-color: -internal-light-dark(rgb(193, 192, 184), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  margin: 0 36%;
+  cursor: text;
+  font: 3em Vidaloka;
+  padding: 25% auto 25% auto;
+  border: 3px solid black;
+  border-radius: 50%;
+  border-image: initial;
+  transform: rotate(-10deg);
+}
+
+.line {
+  color: white;
+  display: flex;
+  width: 90%;
+  align-items: center;
+  text-align: center;
+  margin: 5% auto;
+}
+.line::before,
+.line::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid white;
+}
+.line::before {
+  margin-right: 0.25em;
+}
+.line::after {
+  margin-left: 0.25em;
 }
