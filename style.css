@@ -53,11 +53,6 @@ body {
   z-index: 1;
 }
 
-button:hover {
-  background-color: #4caf50; /* Green */
-  color: white;
-}
-
 button {
   appearance: button;
   -webkit-writing-mode: horizontal-tb !important;
@@ -71,9 +66,9 @@ button {
   text-align: center;
   align-items: flex-start;
   cursor: default;
-  background-color: none;
+  background-color: white;
   box-sizing: border-box;
-  margin: 0.2em;
+  margin: 0 5%;
   font: 2em Vidaloka;
   border: 2px solid black;
   border-radius: 10px;
@@ -99,7 +94,7 @@ input {
   appearance: textfield;
   background-color: -internal-light-dark(rgb(193, 192, 184), rgb(59, 59, 59));
   -webkit-rtl-ordering: logical;
-  margin: 0 36%;
+  margin: 0 35%;
   cursor: text;
   font: 3em Vidaloka;
   padding: 25% auto 25% auto;
@@ -109,10 +104,19 @@ input {
   transform: rotate(-10deg);
 }
 
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .line {
   color: white;
   display: flex;
-  width: 90%;
+  width: 60%;
   align-items: center;
   text-align: center;
   margin: 5% auto;

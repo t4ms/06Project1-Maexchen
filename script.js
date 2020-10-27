@@ -29,8 +29,8 @@ class Game {
     this.currRandomNum = 0;
   }
   rollDice() {
+    this.prevTurnAnswer = this.currTurnAnswer;
     const dice = [...document.querySelectorAll(".die-list")];
-    this.diceNum = "";
     dice.forEach(die => {
       this.toggleClasses(die);
       this.diceNum = this.getRandomNumber(1, 6);
@@ -65,13 +65,23 @@ class Game {
       alert("Choose a higer number");
     } else if (numberArray.includes(submitNum)) {
       this.currTurnAnswer = submitNum;
+      this.hiddenFunc("dice");
+      this.hiddenFunc("buttonPreLie");
+      this.hiddenFunc("lineOR");
+      this.hiddenFunc("buttonNewTurn");
+      this.hiddenFunc("form");
     } else {
       alert("wrong nummer - try again");
     }
   }
 
-  newTurn() {
-    this.prevTurnAnswer = this.currTurnAnswer;
+  hiddenFunc(elementID) {
+    var hiddenState = document.getElementById(elementID);
+    if (hiddenState.style.visibility === "visible") {
+      hiddenState.style.visibility = "hidden";
+    } else {
+      hiddenState.style.visibility = "visible";
+    }
   }
 
   previousLies() {
@@ -87,7 +97,11 @@ class Game {
 let gameStart = new Game();
 
 document.getElementById("buttonNewTurn").addEventListener("click", () => {
-  gameStart.newTurn();
+  gameStart.hiddenFunc("dice");
+  gameStart.hiddenFunc("buttonPreLie");
+  gameStart.hiddenFunc("lineOR");
+  gameStart.hiddenFunc("buttonNewTurn");
+  gameStart.hiddenFunc("form");
   gameStart.rollDice();
   if (gameStart.currRandomNum === "21") {
     setTimeout(function() {
@@ -110,16 +124,3 @@ form.onsubmit = e => {
 document.getElementById("buttonPreLie").addEventListener("click", () => {
   gameStart.previousLies();
 });
-
-// Dice-Rolling-Function
-let randomNr = [];
-
-function rollDice() {
-  const dice = [...document.querySelectorAll(".die-list")];
-  dice.forEach(die => {
-    toggleClasses(die);
-    var numberRa = getRandomNumber(1, 6);
-    die.dataset.roll = numberRa;
-    console.log(numberRa);
-  });
-}
