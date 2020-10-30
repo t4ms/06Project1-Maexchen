@@ -21,7 +21,7 @@ body {
   font-size: 12px;
   background-image: url("https://raw.githubusercontent.com/t4ms/06Project1-Maexchen/master/02Content/woodtableback.jpg");
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -51,6 +51,55 @@ body {
   color: rgba(20, 20, 20, 0.95);
   position: absolute;
   z-index: 1;
+}
+
+.frame {
+  border: solid 5px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 75%;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 1em;
+  line-height: 1.5em;
+  background: url(https://raw.githubusercontent.com/t4ms/06Project1-Maexchen/a87282cd09882615c21de2655f9f025aa267ffae/02Content/maexchen.svg)
+    no-repeat;
+  background-position: 50% 30%;
+  background-size: 70%;
+  background-color: #fce8d9;
+  position: absolute;
+  z-index: 2;
+}
+#lyingFrameText {
+  top: 75%;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  height: 100px;
+  position: absolute;
+  z-index: 5;
+}
+
+.frameImgYou {
+  width: 300px;
+  margin: -45% -50%;
+  position: absolute;
+  z-index: 4;
+}
+.frameImgPrev {
+  width: 300px;
+  margin: -45% -50%;
+  position: absolute;
+  z-index: 5;
+}
+
+#lyingFrameButton {
+  top: 90%;
+  left: 0;
+  position: absolute;
+  z-index: 5;
 }
 
 button {

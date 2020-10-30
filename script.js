@@ -86,8 +86,14 @@ class Game {
 
   previousLies() {
     if (this.currRandomNum === this.currTurnAnswer) {
+      this.hiddenFunc("decisionYouDrink");
+      document.getElementById("lyingFrameText").innerHTML =
+        "You don´t trust your friend! <br> Shame on you - take a drink";
       console.log("Previous player isn´t lieing - you drink");
     } else {
+      this.hiddenFunc("decisionPrevDrink");
+      document.getElementById("lyingFrameText").innerHTML =
+        "Yes you are right!<br> Take a drink, mate";
       console.log("Previous player is lieing - your mate is drinking");
     }
   }
@@ -122,5 +128,11 @@ form.onsubmit = e => {
 };
 
 document.getElementById("buttonPreLie").addEventListener("click", () => {
-  gameStart.previousLies();
+  gameStart.hiddenFunc("lyingFrame");
+  setTimeout(function() {
+    gameStart.previousLies();
+  }, 2000);
+  setTimeout(function() {
+    gameStart.hiddenFunc("lyingFrameButton");
+  }, 4000);
 });
