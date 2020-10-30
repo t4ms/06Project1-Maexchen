@@ -111,8 +111,14 @@ document.getElementById("buttonNewTurn").addEventListener("click", () => {
   gameStart.rollDice();
   if (gameStart.currRandomNum === "21") {
     setTimeout(function() {
-      alert("MÄXCHEN - everyone except of you take a drink!!!");
+      gameStart.hiddenFunc("lyingFrame");
+      gameStart.hiddenFunc("decisionPrevEveryone");
+      document.getElementById("lyingFrameText").innerHTML =
+        "MÄXCHEN <br> Everybody except of you take a drink!";
     }, 1600);
+    setTimeout(function() {
+      gameStart.hiddenFunc("lyingFrameButton");
+    }, 4000);
   }
   console.log(`Random Number after dicing:${gameStart.currRandomNum}`);
   console.log(`Previous submit Number in safe:${gameStart.prevTurnAnswer}`);
