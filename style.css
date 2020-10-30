@@ -90,16 +90,15 @@ body {
 }
 .frameImgPrev {
   width: 300px;
-  margin: -45% -50%;
+  margin: -50% -45%;
   position: absolute;
   z-index: 5;
 }
-
-#lyingFrameButton {
-  top: 90%;
-  left: 0;
+.frameImgEveryone {
+  width: 230px;
+  margin: -25% -45%;
   position: absolute;
-  z-index: 5;
+  z-index: 6;
 }
 
 button {
@@ -117,15 +116,34 @@ button {
   cursor: default;
   background-color: white;
   box-sizing: border-box;
-  margin: 0 5%;
   font: 2em Vidaloka;
   border: 2px solid black;
   border-radius: 10px;
+  position: absolute;
+  z-index: 1;
 }
 
 button:hover {
   background-color: #4caf50; /* Green */
   color: white;
+}
+#buttonNewTurn {
+  top: 70%;
+}
+#lineOR {
+  position: absolute;
+  z-index: 1;
+  top: 62%;
+}
+#buttonNum {
+  top: 70%;
+  left: 0;
+}
+#lyingFrameButton {
+  top: 90%;
+  left: 5%;
+  position: absolute;
+  z-index: 5;
 }
 
 input {
@@ -143,7 +161,7 @@ input {
   appearance: textfield;
   background-color: -internal-light-dark(rgb(193, 192, 184), rgb(59, 59, 59));
   -webkit-rtl-ordering: logical;
-  margin: 0 35%;
+  margin: 0 -15%;
   cursor: text;
   font: 3em Vidaloka;
   padding: 25% auto 25% auto;
@@ -151,6 +169,8 @@ input {
   border-radius: 50%;
   border-image: initial;
   transform: rotate(-10deg);
+  position: absolute;
+  z-index: 1;
 }
 
 input[type="number"] {
