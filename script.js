@@ -92,7 +92,7 @@ class Game {
     } else {
       this.hiddenFunc("decisionPrevDrink");
       document.getElementById("lyingFrameText").innerHTML =
-        "Yes you are right!<br> Take a drink, mate";
+        "Yes, you are right!<br> Take a drink, mate";
     }
   }
 }
@@ -112,7 +112,7 @@ document.getElementById("buttonNewTurn").addEventListener("click", () => {
       gameStart.hiddenFunc("lyingFrame");
       gameStart.hiddenFunc("decisionPrevEveryone");
       document.getElementById("lyingFrameText").innerHTML =
-        "MÄXCHEN <br> Everybody except of you take a drink!";
+        "MÄXCHEN <br> Everybody except you takes a drink!";
     }, 1600);
     setTimeout(function() {
       gameStart.hiddenFunc("lyingFrameButton");
