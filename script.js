@@ -89,12 +89,10 @@ class Game {
       this.hiddenFunc("decisionYouDrink");
       document.getElementById("lyingFrameText").innerHTML =
         "You don´t trust your friend! <br> Shame on you - take a drink";
-      console.log("Previous player isn´t lieing - you drink");
     } else {
       this.hiddenFunc("decisionPrevDrink");
       document.getElementById("lyingFrameText").innerHTML =
         "Yes you are right!<br> Take a drink, mate";
-      console.log("Previous player is lieing - your mate is drinking");
     }
   }
 }
@@ -120,16 +118,14 @@ document.getElementById("buttonNewTurn").addEventListener("click", () => {
       gameStart.hiddenFunc("lyingFrameButton");
     }, 4000);
   }
-  console.log(`Random Number after dicing:${gameStart.currRandomNum}`);
-  console.log(`Previous submit Number in safe:${gameStart.prevTurnAnswer}`);
 });
 
 form.onsubmit = e => {
   gameStart.submitNumber();
-  console.log(`Current Submit Answer ${gameStart.currTurnAnswer}`);
   document.getElementById("beercoasterNumber").innerHTML = `${
     gameStart.currTurnAnswer
   }`;
+  document.getElementById("number").value = "";
   e.preventDefault();
 };
 
@@ -141,4 +137,13 @@ document.getElementById("buttonPreLie").addEventListener("click", () => {
   setTimeout(function() {
     gameStart.hiddenFunc("lyingFrameButton");
   }, 4000);
+});
+
+document.getElementById("rulesbutton").addEventListener("click", () => {
+  gameStart.hiddenFunc("rulesFrame");
+  let rulesBtn = document.getElementById("rulesbutton").innerHTML;
+  if (rulesBtn == "?"){
+  document.getElementById("rulesbutton").innerHTML = "x";}
+  else {
+  document.getElementById("rulesbutton").innerHTML = "?";}  
 });
