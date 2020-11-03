@@ -93,6 +93,9 @@ header {
   font-size: 36px;
   line-height: 0.9;
 }
+.framerules h2{
+  text-align: center;
+}
 .framerules p {
   text-align: center;
 }
